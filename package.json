@@ -1,0 +1,21 @@
+{
+  "name": "javascript_coding_logic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "forSum().js",
+  "scripts": {
+    "start": "nodemon recursion.js",
+    "dev": "xdg-open index.html",
+    "check": "echo 'Sab sahi chal raha hai!'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
