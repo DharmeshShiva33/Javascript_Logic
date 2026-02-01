@@ -21,4 +21,4 @@ function counterRecursionStoreEachValue(n, result = []) {
 }
 
 const output = counterRecursionStoreEachValue(5);
-console.log("sdad", output);
+console.log("Stored Values:", output);
