@@ -41,3 +41,20 @@ UserClass.prototype.sayHiClass = function () {
 const UserClass1 = new UserClass("nameClass", 28);
 
 console.log("UserClass", UserClass1); //in that im create prototype method using a class constructor
+
+function printHello2() {
+  console.log("PrintHello");
+  return 2;
+}
+
+class ObjectProtoUse {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+ObjectProtoUse.prototype.printHello2 = printHello2;
+const newObject = new ObjectProtoUse("Dharma", 39);
+
+console.log("ObjectProtoUse", newObject);
