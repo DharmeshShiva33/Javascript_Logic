@@ -121,18 +121,29 @@ removeDuplicatesUsingWhile("sssxxx");
 function firstStringNonRepeatCharacter(strVal) {
   let firstNonRepeatVal = {};
   let freq = {};
-
+  //using for of method to creating object.
   for (let char of strVal) {
     freq[char] = (freq[char] || 0) + 1;
   }
 
+  //using for loop method to creating object.
   for (let i = 0; i < strVal.length; i++) {
     firstNonRepeatVal[strVal[i]] = (firstNonRepeatVal[strVal[i]] || 0) + 1;
   }
 
-  console.log(firstNonRepeatVal);
-  console.log(freq);
-  console.log(typeof -1);
+  //onced im creating object we have to check object value.
+  for (i of strVal) {
+    if (firstNonRepeatVal[i] === 1) {
+      console.log("First Non Repeating character", i);
+      return i;
+    }
+  }
+
+  console.log(
+    "First Non Repeat Value in firstNonRepeatVal:-",
+    firstNonRepeatVal
+  );
+  console.log("First Non Repeat Value in freq:-", freq);
 }
 
 firstStringNonRepeatCharacter("programmng");

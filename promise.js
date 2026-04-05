@@ -60,14 +60,16 @@ const promiseAll1 = new Promise((resolved, reject) => {
     reject("Promise All 1 , ERROR");
   }
 });
+
 const promiseAll2 = new Promise((resolved, reject) => {
-  let isSuccess = false;
+  let isSuccess = true;
   if (isSuccess) {
     resolved("Promise All 2 woking");
   } else {
     reject("Promise All 2 , ERROR");
   }
 });
+
 const promiseAll3 = new Promise((resolved, reject) => {
   let isSuccess = true;
   if (isSuccess) {
@@ -78,7 +80,7 @@ const promiseAll3 = new Promise((resolved, reject) => {
 });
 
 Promise.all([promiseAll1, promiseAll2, promiseAll3])
-  .then((values) => console.log(values))
+  .then((values) => console.log("Promis.All", values))
   .catch((err) => console.log("Promis.All failed", err));
 
 const promiseAllUser = async () => {
@@ -110,3 +112,37 @@ const asyncPromiseAll = async () => {
 };
 
 asyncPromiseAll();
+
+const promisTest = new Promise((resolve, reject) => {
+  let isSuccess = true;
+
+  if (isSuccess) {
+    resolve("Hello, i have a access");
+  } else {
+    reject("Hello, i don't have a access");
+  }
+});
+
+const promiseResult = promisTest
+  .then((item) => console.log("i can get Access of promise", item))
+  .catch((err) => {
+    console.log("err", err);
+  });
+
+function promiseResultFn() {
+  return new Promise((resolve, reject) => {
+    let isSuccess = false;
+
+    if (isSuccess) {
+      resolve("Hello, i have access using Function Method");
+    } else {
+      reject("Hello, i don't have access using Function Method");
+    }
+  });
+}
+
+const promiseResultFnVal = promiseResultFn()
+  .then((item) => console.log("Promise Value get with Funtion", item))
+  .catch((err) => {
+    console.log("Promise Promise Value get with Funtion", err);
+  });

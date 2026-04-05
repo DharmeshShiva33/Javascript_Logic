@@ -120,6 +120,18 @@ const u = new BoundUser();
 
 console.log("UUU", u.name); // "Amit"
 
+const obj22 = {
+  name: "JS",
+  sayHi: function () {
+    setTimeout(function () {
+      console.log("obj22", this.name);
+    }, 0);
+  },
+};
+
+obj22.sayHi();
+// newObj22();
+
 document.body.innerHTML = `
   <div class="flex justify-center items-center">
   <h1>CALL Method</h1>

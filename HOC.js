@@ -158,3 +158,27 @@ document.body.innerHTML = `
 `;
 
 // document.querySelector(".call-func").onclick = test();
+
+function memoizeHOC(fn) {
+  let cache = {};
+  return function (...args) {
+    let key = JSON.stringify(args);
+    console;
+    if (cache[key]) {
+      console.log("print from cahche", cache[key]);
+      return cache[key];
+    }
+
+    const result = fn(...args);
+    cache[key] = result;
+    console.log("Print a new Val", cache[key]);
+    return result;
+  };
+}
+function add(a, b) {
+  console.log(a + b);
+  return a + b;
+}
+const mewMemoizeVal = memoizeHOC(add);
+mewMemoizeVal(2, 4);
+mewMemoizeVal(2, 4);
